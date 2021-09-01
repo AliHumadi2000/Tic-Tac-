@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include<math.h>
+#include<string.h>
+int main()
+{
+    printf("Tic Tac Game \n");
+    int a[3][3];
+    int i,j,p=0;;
+    char ch[9];
+    scanf("%s",ch);
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+
+            a[i][j]=ch[p]-'0';
+            p++;
+        }
+    }
+    printf("\n");
+     for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            printf("%d ",a[i][j]);
+        }
+        printf("\n");
+    }
+    int sum=0,k;
+    int l=0,m=0;
+for(k=8;k>=0;k--)
+{
+
+    sum+=a[l][m]*pow(3,k);
+    printf("%d %d ",l,m);
+    m++;
+    if(m==3)
+    {
+        m=0;
+        l++;
+    }
+
+
+}
+int x=pow(3,9);
+printf("%d %d\n",sum,x);
+if(sum<x)
+{
+    printf("valid");
+}
+else
+
+printf("not valid");
+
+
+    return 0;
+}
